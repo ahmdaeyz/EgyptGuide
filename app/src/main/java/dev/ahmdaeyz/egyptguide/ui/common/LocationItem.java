@@ -11,6 +11,7 @@ import com.xwray.groupie.viewbinding.BindableItem;
 import java.util.Optional;
 
 import dev.ahmdaeyz.egyptguide.R;
+import dev.ahmdaeyz.egyptguide.data.entities.Egypt;
 import dev.ahmdaeyz.egyptguide.data.entities.GuideLocation;
 import dev.ahmdaeyz.egyptguide.databinding.LocationItemBinding;
 import dev.ahmdaeyz.egyptguide.ui.utils.Binding;
@@ -35,7 +36,7 @@ public class LocationItem extends BindableItem<LocationItemBinding> {
         viewBinding.locationExact.setText(location.getExactLocation());
         Binding.bindImageViewWithRoundedCorners(
                 viewBinding.locationImage,
-                location.getPhotoUrl(),
+                Egypt.getDrawables().get(location.getName()),
                 Optional.empty()
         );
     }

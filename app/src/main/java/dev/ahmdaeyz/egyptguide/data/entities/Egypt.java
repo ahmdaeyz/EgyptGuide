@@ -5,8 +5,11 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import dev.ahmdaeyz.egyptguide.R;
 
 public class Egypt implements ILocation {
     private static Egypt INSTANCE;
@@ -213,4 +216,25 @@ public class Egypt implements ILocation {
         );
     }
 
+    public static HashMap<String, Integer> getDrawables() {
+        HashMap<String, Integer> drawables = new HashMap<>();
+        drawables.put("Saint Mark's Coptic Orthodox Cathedral", R.drawable.saint_mark_s_coptic_orthodox_cathedral);
+        drawables.put("The Hanging Church", R.drawable.the_hanging_church);
+        drawables.put("Abu Serga Church", R.drawable.abu_serga_church);
+        drawables.put("Saint Catherine's Monastery", R.drawable.saint_catherine_s_monastery);
+        drawables.put("Amr Ibn Al-As Mosque", R.drawable.amr_ibn_al_as_mosque);
+        drawables.put("Al-Rifai Mosque", R.drawable.al_rifai_mosque);
+        drawables.put("Ahmed Ibn Tulun Mosque", R.drawable.ahmed_ibn_tulun_mosque);
+        drawables.put("Abdeen Palace Museum complex", R.drawable.abdeen_palace_museum_complex);
+        drawables.put("Denshway Museum", R.drawable.denshway_museum);
+        drawables.put("The Child Museum", R.drawable.the_child_museum);
+        drawables.put("Museum of Nasser", R.drawable.museum_of_nasser);
+        drawables.put("Gezira Museum", R.drawable.gezira_museum);
+        drawables.put("Port Said", R.drawable.port_said);
+        drawables.put("Aswan", R.drawable.aswan);
+        drawables.put("Nuwebie", R.drawable.nuwebie);
+        drawables.put("Hurghada", R.drawable.hurghada);
+        drawables.put("El-Ain El-Sukhna", R.drawable.el_ain_el_sukhna);
+        return drawables;
+    }
 }

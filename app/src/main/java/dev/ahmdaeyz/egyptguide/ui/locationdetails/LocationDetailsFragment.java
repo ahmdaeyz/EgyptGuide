@@ -2,22 +2,19 @@ package dev.ahmdaeyz.egyptguide.ui.locationdetails;
 
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
-
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
 import com.bumptech.glide.Glide;
 
 import org.parceler.Parcels;
 
-import dev.ahmdaeyz.egyptguide.R;
+import dev.ahmdaeyz.egyptguide.data.entities.Egypt;
 import dev.ahmdaeyz.egyptguide.data.entities.GuideLocation;
 import dev.ahmdaeyz.egyptguide.databinding.FragmentLocationDetailsBinding;
 import dev.ahmdaeyz.egyptguide.navigation.NavigateFrom;
@@ -80,7 +77,7 @@ public class LocationDetailsFragment extends Fragment {
         binding.locationDetails.setText(location.getDescription());
         Glide
                 .with(binding.locationImage)
-                .load(location.getPhotoUrl())
+                .load(Egypt.getDrawables().get(location.getName()))
                 .into(binding.locationImage);
 
     }
