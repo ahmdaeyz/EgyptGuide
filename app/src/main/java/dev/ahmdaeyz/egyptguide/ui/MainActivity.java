@@ -1,12 +1,12 @@
 package dev.ahmdaeyz.egyptguide.ui;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-
-import android.os.Bundle;
-import android.view.LayoutInflater;
 
 import dev.ahmdaeyz.egyptguide.R;
 import dev.ahmdaeyz.egyptguide.data.entities.Egypt;
@@ -18,7 +18,7 @@ import dev.ahmdaeyz.egyptguide.ui.locationdetails.LocationDetailsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigateFrom.Location, NavigateFrom.Guide {
     private ActivityMainBinding binding;
-    private Egypt mainLocation;
+    public static Egypt mainLocation;
     private FragmentManager fragmentManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,11 @@ public class MainActivity extends AppCompatActivity implements NavigateFrom.Loca
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this));
         setContentView(binding.getRoot());
         fragmentManager = getSupportFragmentManager();
-        mainLocation = Egypt.getInstance();
+        try {
+            mainLocation = Egypt.init(getResources());
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
         if (savedInstanceState!=null){
             Fragment detailsFragment = fragmentManager.getFragment(savedInstanceState,"details_fragment");
             Fragment guideFragment = fragmentManager.getFragment(savedInstanceState,"guide_fragment");

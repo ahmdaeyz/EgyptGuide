@@ -5,14 +5,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import dev.ahmdaeyz.egyptguide.ui.guide.churches.ChurchesFragment;
 import dev.ahmdaeyz.egyptguide.ui.guide.famouscities.FamousCitiesFragment;
 import dev.ahmdaeyz.egyptguide.ui.guide.mosques.MosquesFragment;
 import dev.ahmdaeyz.egyptguide.ui.guide.museums.MuseumsFragment;
 
-public class LocationsFragmentsPagerAdapter extends FragmentStatePagerAdapter {
+public class LocationsFragmentsPagerAdapter extends FragmentPagerAdapter {
     @NonNull
     private final String[] pageTitles = {"Cities","Mosques","Churches","Museums"};
 
@@ -23,9 +22,9 @@ public class LocationsFragmentsPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position){
-            case 0:
-                return new FamousCitiesFragment();
             case 1:
+                return new FamousCitiesFragment();
+            case 0:
                 return new MosquesFragment();
             case 2:
                 return new ChurchesFragment();
