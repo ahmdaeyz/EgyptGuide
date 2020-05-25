@@ -10,15 +10,13 @@ public class GuideLocation {
     private final String exactLocation;
     private final String description;
     private final LocationType locationType;
-    private final String photoUrl;
 
     @ParcelConstructor
-    GuideLocation(String name, String exactLocation, String description, LocationType locationType, String photoUrl) {
+    GuideLocation(String name, String exactLocation, String description, LocationType locationType) {
         this.name = name;
         this.exactLocation = exactLocation;
         this.description = description;
         this.locationType = locationType;
-        this.photoUrl = photoUrl;
     }
 
     public String getName() {
@@ -37,7 +35,4 @@ public class GuideLocation {
         return locationType;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
-    }
 }
