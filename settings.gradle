@@ -1,0 +1,2 @@
+rootProject.name='Egypt Guide'
+include ':app'
